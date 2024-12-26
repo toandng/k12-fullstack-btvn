@@ -31,22 +31,21 @@ const products = [
 	},
 ];
 function getTopProducts(products, top) {
-    const result = [...products];
-    for(let i = 0; i< result.length;i++){
-        let maxId = i;
-        for(let j = i+1 ; j < result.length;j++){
-            if(result[j].price > result[maxId] ){
-                maxId = j;
-            }
-            if(maxId != i){
-                [result[i], result[maxId] = result[maxId], result[i]];
-            }
-        }
-        
-    }
-     return result.slice(0,top);
+	const result = [...products];
+	for(let i = 0; i< result.length;i++){
+		const maxId = i;
+		for(let j = 0 ; j < result.length;j++){
+			if(result[i].price > result[maxId]){
+				maxId.price = j;
+			}
+			if(maxId != i){
+				[result[i],result[maxId] = result[maxId], result[i]];
+			}
+		}
+	}
+	return result.slice(0, top);
 }
-const topProduct = getTopProducts(products,3 )
+const topProduct = getTopProducts(products,3)
 console.log(topProduct);
 
 const categories = [
@@ -100,29 +99,30 @@ const categories = [
 	},
 ];
 function flattenCategories(categories) {
-    return categories.reduce((pre, cur) => {
-        if(cur.children && Array.isArray(cur.children)){
-            return pre.concat(cur, flattenCategories(cur.children));
-        }
-        return pre.concat(cur)
-    }, []);
+	return categories.reduce((pre,cur) => {
+		if(cur.children && Array.isArray(cur.children)){
+			return pre.concat(cur, flattenCategories(cur.children));
+		}
+		return pre.concat(cur)
+	}, []);
 }
 console.log(flattenCategories(categories));
 
-function getCategoryName(categories, categoryId) {
-    for(let category of categories) {
-        if(category.id === categoryId) {
-            return category.name;
-        }
-        if(category.children){
-            const result = getCategoryName(category.children, categoryId);
-            if(result){
-                return result;
-            }
-        }
-    }return null;
-}
-console.log(getCategoryName(categories,3));
-console.log(getCategoryName(categories,99));
 
+console.log(flattenCategories(categories));
+
+function getCategoryName(categories, categoryId) {
+	for(let category of categories) {
+		if(category.id === categoryId) {
+			return category.name
+		}
+		if(category.children){
+			const result = getCategoryName(category.children, categoryId);
+			if(result){
+				return result
+			}
+		}
+	}return null;
+}
+console.log(getCategoryName(categories,2));
 
