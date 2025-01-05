@@ -52,7 +52,7 @@ const categories = [
 function flattenCategories(arr, parentId = 0) {
     return arr.reduce((pre, cur) => {
         const {children, ...rest} = cur;
-        const current = {...rest, children}; 
+        const current = {...rest, parentId}; 
         if(children && Array.isArray(children)){
             return pre.concat(current, flattenCategories(children, cur.id));
             
