@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nested Menu</title>
+  <style>
+    .menu,
+    .menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .menu > li {
+      position: relative;
+    }
+
+    .menu > li > a {
+      display: block;
+      padding: 10px 15px;
+      text-decoration: none;
+      color: #333;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+    }
+
+    .menu > li > a:hover {
+      background-color: #ddd;
+    }
+
+    .menu ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 1000;
+      background-color: #fff;
+      border: 1px solid #ddd;
+    }
+
+    .menu li:hover > ul {
+      display: block;
+    }
+
+    .menu ul a {
+      padding: 10px 15px;
+      text-decoration: none;
+      color: #333;
+      display: block;
+    }
+
+    .menu ul a:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+  <div id="menu-container"></div>
+  <script src="./ex06.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bé Tập Tính</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: red;
+        }
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bé Tập Tính</h1>
+        <form id="calculator-form">
+            <div>
+                <input type="number" id="number1" placeholder="Nhập số thứ nhất">
+            </div>
+            <div>
+                <input type="number" id="number2" placeholder="Nhập số thứ hai">
+            </div>
+            <div>
+                <button type="button" onclick="selectOperation('+')">Cộng</button>
+                <button type="button" onclick="selectOperation('-')">Trừ</button>
+                <button type="button" onclick="selectOperation('*')">Nhân</button>
+                <button type="button" onclick="selectOperation('/')">Chia</button>
+            </div>
+            <div>
+                <button type="button" onclick="calculate()">Kết quả</button>
+            </div>
+        </form>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script src="./ex07.js"> </script>
+</body> 
+</html>

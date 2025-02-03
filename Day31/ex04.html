@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <ul >
+            </ul>
+        </nav>
+    </header>
+    <script>
+        const dataMenu = [
+            {id:1, name: "Trang chủ", slug:"/"},
+            {id:2, name: "Sản phẩm", slug:"/san-pham"},
+            {id:3, name: "Bài viết", slug:"/bai-viet"},
+            {id:4, name: "Lập trình C++", slug:"/lap-trinh-c", parentId: 3},
+        ];
+        function buildData(data, parentId = null, lever = 1){
+            const ul = document.createElement("ul");
+            ul.classList.add(`lever-${lever}`);
+            const items = data.filter(item => item.parentId === parentId);
+
+            items.forEach(item =>{
+                const li = document.createElement("li");
+                li.textContent = item.name;
+
+                const children = buildData(data, item.id,lever+1);
+                if(children) {
+                    li.appendChild(children);
+                }
+                ul.appendChild(li);
+            });
+            return ul.children.length > 0 ? ul : null;
+            
+        }
+        const menu = document.getElementById("menu");
+        const menuTree = buildData(dataMenu);
+
+        if (menuTree) {
+            menu.appendChild(menuTree);
+        }
+    </script>
+    <!--Từ dataMenu cho trước, xây dựng giao diện đa cấp
+        cấp 1: Font-size: 30px;
+        cấp 2: Font-size: 28px;
+        cấp 3->n : Font-size :24px;
+    -->
+</body>
+</html>

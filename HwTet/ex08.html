@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chia Bill</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .first-child{
+            margin-left: -200px;
+        }
+        .second-child{
+            margin-left: -160px;
+        }
+        input{
+            width: 65%;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ứng Dụng Chia Bill</h1>
+        <form id="bill-splitter-form">
+            <div>
+                <p class="first-child">Tổng bill:</p>
+                <input type="number" id="total-bill" placeholder="Nhập tổng bill (VNĐ)" min="0">
+            </div>
+            <div>
+                <p class="second-child">Số người chia</p>
+                <input type="number" id="number-of-people" placeholder="Nhập số người chia bill" min="1">
+            </div>
+            <div>
+                <p  class="first-child">Tiền tip</p>
+                <input type="number" id="tip-amount" placeholder="Nhập tiền tip (VNĐ)" min="0">
+            </div>
+            <div>
+                <button type="button" onclick="calculateBill()">Tính tiền</button>
+            </div>
+        </form>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script src="./ex08.js"></script>
+</body>
+</html>

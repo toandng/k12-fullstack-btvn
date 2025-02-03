@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+        .cart {
+            margin-top: 20px;
+            display: none; /* Ban đầu giỏ hàng sẽ bị ẩn */
+        }
+        .cart-buttons {
+            margin-top: 10px;
+        }
+        button {
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>DANH SÁCH SẢN PHẨM</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Tên sản phẩm</th>
+                <th>Giá</th>
+                <th>Thêm vào giỏ</th>
+            </tr>
+        </thead>
+        <tbody id="product-list">
+            <!-- Sản phẩm sẽ được thêm vào đây -->
+        </tbody>
+    </table>
+
+    <h2>GIỎ HÀNG</h2>
+    <div class="cart" id="cart-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Giá</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                    <th>Xóa</th>
+                </tr>
+            </thead>
+            <tbody id="cart-list">
+                <tr>
+                    <td colspan="6">Giỏ hàng không có sản phẩm</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4"><strong>Tổng</strong></td>
+                    <td colspan="2" id="total-price">0</td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="cart-buttons">
+            <button onclick="updateCart()">Cập nhật giỏ hàng</button>
+            <button onclick="clearCart()">Xóa giỏ hàng</button>
+        </div>
+    </div>
+
+    <script src="./ex09.js"></script>
+</body>
+</html>

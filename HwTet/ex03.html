@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ứng dụng bói bài Tarot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f3f4f6;
+      color: #333;
+      margin: 20px;
+    }
+    .card-container {
+      margin: 20px auto;
+      padding: 20px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      background-color: #fff;
+      width: 50%;
+    }
+    .card-name {
+      font-size: 24px;
+      font-weight: bold;
+      color: #4a90e2;
+    }
+    .card-description {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #666;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4a90e2;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 5px;
+    }
+    button:hover {
+      background-color: #357abd;
+    }
+    .single-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  </style>
+</head>
+<body>
+  <h1>Ứng dụng bói bài Tarot</h1>
+  <button id="drawCardButton">Rút bài</button>
+  <div class="card-container" id="cardContainer" style="display: none;">
+    <div id="cardsDisplay"></div> 
+    <div id="actionButtons" style="margin-top: 20px; display: none;">
+      <button id="drawMoreButton">Rút thêm</button>
+      <button id="endDrawButton">Kết thúc</button>
+    </div>
+  </div>
+  
+
+  <script src="ex03.js"></script>
+</body>
+</html>

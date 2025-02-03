@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh mục</title>
+  <style>
+
+  .menu,
+  .submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .menu > li {
+    position: relative;
+  }
+
+  .menu > li > a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+  }
+
+  .menu > li > a:hover {
+    background-color: #ddd;
+  }
+
+
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    background-color: #fff;
+    border: 1px solid #ddd;
+  }
+
+  .submenu li {
+    width: 200px;
+  }
+
+  .menu > li:hover > .submenu {
+    display: block;
+  }
+
+  .submenu a {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    display: block;
+  }
+
+  .submenu a:hover {
+    background-color: #f1f1f1;
+  }
+
+  </style>
+</head>
+<body>
+  <div id="menu-container"></div>
+  <script src="./ex05.js">
+    
+  </script>
+</body>
+</html>

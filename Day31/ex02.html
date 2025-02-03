@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, voluptas.
+        </p>
+    </div>
+    <script>
+        let pElement = document.getElementsByTagName("p")[0];
+        pElement.title = "noi dung doan van";
+
+        pElement.setAttribute("data-id", "1");
+        console.log(pElement.getAttribute("data-id"));
+        pElement.setAttribute("title", "noi dung van bang");
+        console.log(pElement.getAttribute("title"));
+        
+    </script>
+</body>
+</html>

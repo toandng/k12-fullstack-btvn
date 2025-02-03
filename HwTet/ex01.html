@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo App</title>
+    <style>
+        body{
+            text-align: center; 
+            padding: 20px 0px;
+        }
+        .completed { text-decoration: line-through; }
+        .button{
+            text-align: center;
+        }
+        #toDo{
+            width: 300px;
+            height: 30px;
+        }
+        #search{
+            margin-left: -125px;
+            width: 300px;
+            margin-top: 10px;
+            height: 30px;
+
+        }
+        #table{
+            position: relative;
+            right: -40%;
+            top: 20px;
+        }
+        th {
+           padding: 0px 20px 20px 20px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="toDo" placeholder="Add a new task" >
+    <button onclick="addTodoList()">Add</button>
+    <button onclick="filterTasks()">Completed</button><br>
+    <input type="text" id="search" placeholder="Search tasks" oninput="searchTasks()">
+    <table id="table"></table>
+    <script src="ex01.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+        .level-1 {
+            font-size: 30px;
+        }
+        .level-2 {
+            font-size: 28px;
+        }
+        .level-3 {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const dataMenu = [
+            {id: 1, name: "Trang chủ", slug: "/"},
+            {id: 2, name: "Sản phẩm", slug: "/san-pham"},
+            {id: 3, name: "Bài viết", slug: "/bai-viet"},
+            {id: 4, name: "Lập trình C++", slug: "/lap-trinh-c", parentId: 3}
+        ];
+
+        function buildMenu(data, parentId = null, level = 1) {
+            const ul = document.createElement('ul');
+            ul.classList.add(`level-${level}`);
+
+            const items = data.filter(item => item.parentId === parentId);
+
+            items.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item.name;
+
+                const children = buildMenu(data, item.id, level + 1);
+                if (children) {
+                    li.appendChild(children);
+                }
+
+                ul.appendChild(li);
+            });
+
+            return ul.children.length > 0 ? ul : null;
+        }
+
+        const menu = buildMenu(dataMenu);
+        document.body.appendChild(menu);
+    </script>
+</body>
+</html>

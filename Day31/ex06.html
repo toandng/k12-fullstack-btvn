@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Plan</title>
+    <style>
+        .box {
+            border-radius: 8px;
+            border: 2px solid #ccc;
+        }
+     
+        .colorful {
+            background-color: #ffe4e1;
+        }
+        .colorful {
+            border: 2px solid red;
+            background-color: #e0f7fa;
+        }
+    </style>
+</head>
+<body>
+    <h1>Choose Your Plan</h1>
+    <button class="choose-box" onclick="function chooseBox (){}">Choose your plan</button>
+
+    <div class="box free">
+        <h2>Gói Free</h2>
+        <ul>
+            <li>Giới hạn dung lượng</li>
+            <li>Dùng thử 30 ngày</li>
+            <li>Số lượng giới hạn: 30</li>
+        </ul>
+    </div>
+    <div class="box premium">
+        <h2>30$/month</h2>
+        <ul>
+            <li>Không giới hạn dung lượng</li>
+            <li>Sử dụng trọn gói</li>
+            <li>Số lượng người dùng: 100</li>
+        </ul>
+    </div>
+    
+
+    <script>
+        const boxes = document.querySelectorAll('.box');
+        boxes.forEach((box) => {
+            box.addEventListener('click', function() {
+                boxes.forEach((b)=> b.classList.remove("colorful"));
+                this.classList.add("colorful");
+            })
+        })
+        
+        
+    </script>
+</body>
+</html>
