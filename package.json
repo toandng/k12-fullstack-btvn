@@ -15,6 +15,7 @@
     "inflection": "^3.0.2",
     "ipaddr.js": "^2.2.0",
     "json-server": "^0.17.4",
+    "json-server-auth": "^2.1.0",
     "json5": "^2.2.3",
     "lowdb": "^7.0.1",
     "milliparsec": "^4.0.0",
@@ -30,7 +31,7 @@
     "type-fest": "^4.34.1"
   },
   "scripts": {
-    "start": "json-server --watch db.json --port 3000"
+    "start": "json-server --watch db.json --port 3003 -m ./node_modules/json-server-auth"
   },
   "keywords": [
     "f8",

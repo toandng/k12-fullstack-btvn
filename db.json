@@ -1796,5 +1796,61 @@
       ],
       "thumbnail": "https://cdn.dummyjson.com/products/images/groceries/Kiwi/thumbnail.png"
     }
+  ],
+  "categories": [],
+  "users": [
+    {
+      "email": "toan@gmail.com",
+      "password": "$2a$10$Y87/43Cs9kpbDrC32TbS6.g59VX76fFslf9w0Wp9ZQx92hFk08gNO",
+      "id": 1
+    },
+    {
+      "email": "a@gmail.com",
+      "password": "$2a$10$W5oPSPAG6VDXx1ns6CWlzOPF1.gZaXRRVrZ6PyBVo58KqFatIV/FW",
+      "id": 2
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Học css",
+      "status": "done",
+      "priority": "Low",
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "title": "java",
+      "status": "todo",
+      "priority": "Low",
+      "userId": 1,
+      "id": 4
+    },
+    {
+      "title": "nodejs",
+      "status": "todo",
+      "priority": "Medium",
+      "userId": 1,
+      "id": 5
+    },
+    {
+      "title": "css",
+      "status": "doing",
+      "priority": "Medium",
+      "userId": 1,
+      "id": 6
+    },
+    {
+      "title": "html",
+      "status": "todo",
+      "priority": "Medium",
+      "id": 7
+    },
+    {
+      "title": "hello",
+      "status": "todo",
+      "priority": "Medium",
+      "userId": "2",
+      "id": 8
+    }
   ]
 }
