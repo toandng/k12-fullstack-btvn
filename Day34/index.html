@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Task</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.task {
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 0px 70px;
+}
+.form-task {
+    width: 100%;
+    padding: 20px;
+    background: #e3f2fd;
+    border-radius: 8px;
+}
+form input, form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    color: white;
+    background-color: #369172;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.list {
+    width: 50%;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+th, td {
+    padding: 5px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+th {
+    background: #369172;
+    color: white;
+}
+tr:nth-child(even) {
+    background: #f9f9f9;
+}
+.btn {
+    margin: 0px 10px;
+}
+.btn-danger {
+    width: 100px;
+}
+.filter {
+    width: 50%;
+    margin: 20px auto 0;
+
+    border-radius: 8px;
+   
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.filter-btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    transition: 0.3s;
+}
+.btn-primary{
+    width: 100px;
+}
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: msFilter"><path d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z"></path></svg>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="../Day34/(auth)/login.html">Logout</a></li>
+                  <li><a class="dropdown-item" href="#">Profile User</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                 
+                </ul>
+              </li>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchInput">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    <div class="menu">
+        <div class="task">
+            <div class="form-task">
+                <form id="addTaskForm">
+                
+                    <input type="text" id="title" placeholder="Tiêu đề" required> <br>
+                    <select id="status">
+                        <option value="todo">Todo</option>
+                        <option value="doing">Doing</option>
+                        <option value="done">Done</option>
+                    </select> <br>
+                    <select id="priority">
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                    <button id="submitBtn" type="submit">Add Task</button>
+                </form>
+            </div>       
+        </div>
+      
+        <div class="list">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Status
+                                <select id="statusFilter">
+                                    <option value="all">All</option>
+                                    <option value="todo">Todo</option>
+                                    <option value="doing">Doing</option>
+                                    <option value="done">Done</option>
+                                </select>
+                    
+                        </th>                 
+                        <th>Priority
+                                <select id="filterPriority">
+                                    <option value="all">All</option>
+                                    <option value="Low">Low</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="High">High</option>
+                                </select>
+    
+                        </th>
+                       
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="task-list"></tbody>
+            </table>
+       </div>
+    </div>
+   
+    <script src="./index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

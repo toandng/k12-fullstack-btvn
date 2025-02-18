@@ -1813,6 +1813,16 @@
       "email": "q@gmail.com",
       "password": "$2a$10$jAPB1Rg16CtjP0YpuCQLs.qtaVqGnn4loyXyiCbm/VHjw0Z7ruxZ6",
       "id": 3
+    },
+    {
+      "email": "e@gmail.com",
+      "password": "$2a$10$Yf5Qcz5SC63zIArwiIqU/OhQW7FbPN0fSgvLWSXgOThFAE3dJjp.e",
+      "id": 4
+    },
+    {
+      "email": "r@gmail.com",
+      "password": "$2a$10$jhMimef1hutvaq0n2Jk6Jewj3HLbf59tukT3fSXSPnSDOSlxaBHxq",
+      "id": 5
     }
   ],
   "tasks": [
@@ -1822,27 +1832,6 @@
       "priority": "Low",
       "userId": 1,
       "id": 3
-    },
-    {
-      "title": "java",
-      "status": "todo",
-      "priority": "Low",
-      "userId": 1,
-      "id": 4
-    },
-    {
-      "title": "nodejs",
-      "status": "todo",
-      "priority": "Medium",
-      "userId": 1,
-      "id": 5
-    },
-    {
-      "title": "css",
-      "status": "doing",
-      "priority": "Medium",
-      "userId": 1,
-      "id": 6
     },
     {
       "title": "html",
@@ -1856,6 +1845,20 @@
       "priority": "Medium",
       "userId": "2",
       "id": 8
+    },
+    {
+      "title": "Học Js",
+      "status": "doing",
+      "priority": "Low",
+      "userId": "1",
+      "id": 10
+    },
+    {
+      "title": "Java",
+      "status": "todo",
+      "priority": "Medium",
+      "userId": "1",
+      "id": 11
     }
   ]
 }
